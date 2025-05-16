@@ -17,7 +17,7 @@ const MyPage = () => {
     useEffect(() => {
         const axiosPosts = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/myPage', {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/myPage`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -50,7 +50,7 @@ const MyPage = () => {
        reader.readAsDataURL(file)
 
         try {
-            const response = await axios.post('http://localhost:8080/api/changeImg', formData, {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/changeImg`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -59,7 +59,7 @@ const MyPage = () => {
             alert('이미지 업로드 성공');
 
             // ✅ 여기! 업로드 성공 후 유저 정보 다시 요청
-            const refreshUser = await axios.get('http://localhost:8080/api/myPage', {
+            const refreshUser = await axios.get(`${process.env.REACT_APP_API_URL}/api/myPage`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },

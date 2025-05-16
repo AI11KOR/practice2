@@ -21,13 +21,14 @@ const server = http.createServer(app);
 // ✅ socket.io 서버 객체 먼저 생성
 const io = new Server(server, {
     cors: {
-      origin: 'http://localhost:3001',
+    //   origin: 'http://localhost:3001',
+      origin: 'https://practice2-xi-three.vercel.app',
       credentials: true,
     },
 });
 
 app.use(cors({
-    origin:'http://localhost:3001',
+    origin: 'https://practice2-xi-three.vercel.app',
     credentials: true, // 키, 세션 정보를 같이 보내겠다는 의미
 }))
 

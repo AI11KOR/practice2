@@ -194,7 +194,7 @@ const RegisterPage = () => {
         }
 
         try {
-            await axios.post('http://localhost:8080/api/register', {
+            await axios.post(`${process.env.REACT_APP_API_URL}/api/register`, {
                 email, name, password, postcode, address, detailAddr
             })
             alert('회원가입 완료!! 로그인페이지로 전환합니다.');

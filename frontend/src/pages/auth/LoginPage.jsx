@@ -36,8 +36,8 @@ const LoginPage = () => {
             return;
         }
 
-        try {
-            const response = await axios.post('http://localhost:8080/api/login', {
+        try { //http://localhost:8080/api/login
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login`, {
                 email, password
             })
     
@@ -89,7 +89,7 @@ const LoginPage = () => {
                 <button onClick={() => navigate('/register')} className={styles.registerBtn}>회원가입하기</button>
             </div>
 
-            <div style={{ marginTop: '30px', textAlign: 'center' }}>
+            {/* <div style={{ marginTop: '30px', textAlign: 'center' }}>
                 <p>SNS로 로그인</p>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
                     <a href="http://localhost:8080/api/auth/google">
@@ -102,7 +102,7 @@ const LoginPage = () => {
                         <img src="/naver-login-btn.png" alt="네이버 로그인" width="180" />
                     </a>
                 </div>
-            </div>
+            </div> */}
 
         </div>
     )

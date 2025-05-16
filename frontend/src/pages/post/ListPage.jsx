@@ -30,7 +30,7 @@ const ListPage = () => {
     useEffect(() => {
         const axiosPosts = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/api/list?page=${currentPage}`)
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/list?page=${currentPage}`)
                 setPosts(response.data.posts); // posts로 연결하였기 때문 controller의 키 만약 posting이라고 적었으면 posting
             } catch (error) {
                 console.log(error);
@@ -43,7 +43,7 @@ const ListPage = () => {
     // 데이터 정렬하기
     const fetchPosts = async (page = 1, sort = sortType) => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/list?page=${page}&sort=${sort}`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/list?page=${page}&sort=${sort}`);
             setPosts(response.data.posts);
             setTotalPage(response.data.totalPage);
             setCurrentPage(page)
@@ -62,7 +62,7 @@ const ListPage = () => {
         if(!confirmDelete) return;
 
         try {
-            await axios.delete(`http://localhost:8080/api/delete/${postId}`, {
+            await axios.delete(`${process.env.REACT_APP_API_URL}/api/delete/${postId}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 },
@@ -80,7 +80,7 @@ const ListPage = () => {
     const handleSearch = async () => {
         try {
             const response = await axios.get
-            (`http://localhost:8080/api/list/search?type=${searchType}&keyword=${keyword}`);
+            (`${process.env.REACT_APP_API_URL}/api/list/search?type=${searchType}&keyword=${keyword}`);
             setPosts(response.data.posts);
 
         } catch (error) {

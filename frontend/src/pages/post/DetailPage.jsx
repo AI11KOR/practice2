@@ -18,7 +18,7 @@ const DetailPage = () => {
   useEffect(() => {
     const axiosPosts = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/detail/${id}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/detail/${id}`);
         setLike(response.data.posts.likes);
         setPosts(response.data.posts);
       } catch (error) {
@@ -32,14 +32,14 @@ const DetailPage = () => {
   // 좋아요 개수 이벤트
   const handleLike = async () => {
     try {
-      await axios.post(`http://localhost:8080/api/like/${id}`, {}, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/like/${id}`, {}, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
       });
       alert('좋아요를 눌렀어요');
 
-      const response = await axios.get(`http://localhost:8080/api/detail/${id}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/detail/${id}`);
       setLike(response.data.posts.likes);
     } catch (error) {
       alert(error.response.data.message || '에러 발생');
@@ -49,7 +49,7 @@ const DetailPage = () => {
   // 댓글 기능
   const handleCommentSubmit = async () => {
     try {
-      await axios.post(`http://localhost:8080/api/comment/${id}`, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/comment/${id}`, {
         commentText: comment
       }, {
         headers: {
@@ -58,7 +58,7 @@ const DetailPage = () => {
       });
       alert('댓글 기능이 저장되었습니다.');
 
-      const response = await axios.get(`http://localhost:8080/api/detail/${id}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/detail/${id}`);
       setPosts(response.data.posts);       // ✅ 전체 posts 갱신
       setComment('');                      // ✅ 입력창 비우기
     } catch (error) {
@@ -73,14 +73,14 @@ const DetailPage = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:8080/api/comment/${id}/${commentId}`, {
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/comment/${id}/${commentId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
       });
       alert('댓글을 삭제했습니다.');
 
-      const response = await axios.get(`http://localhost:8080/api/detail/${id}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/detail/${id}`);
       setPosts(response.data.posts);
     } catch (error) {
       console.log(error);

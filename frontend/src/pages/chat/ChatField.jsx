@@ -17,7 +17,7 @@ const ChatField = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/api/me', {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/me`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -59,7 +59,7 @@ const ChatField = () => {
     useEffect(() => {
         const fetchMessages = async () => {
           try {
-            const res = await axios.get('http://localhost:8080/api/chat', {
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/chat`, {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
               },

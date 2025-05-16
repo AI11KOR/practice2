@@ -23,7 +23,7 @@ const ShopPage = () => {
     const fetchPosts = async (sort = sortType) => {
         try {
             console.log('📤 서버에 보내는 정렬 기준:', sort);
-            const response = await axios.get(`http://localhost:8080/api/shop?sort=${sort}`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/shop?sort=${sort}`);
             dispatch(setProducts(response.data)); // ✅ 리덕스에 저장
         } catch (error) {
             console.log('상품 정렬 데이터 요청 실패:', error);
@@ -43,7 +43,7 @@ const ShopPage = () => {
                 return;
             }
             console.log('🔍 검색 요청:', searchType, keyword);
-            const response = await axios.get(`http://localhost:8080/api/shop/search?type=${searchType}&keyword=${keyword}`)
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/shop/search?type=${searchType}&keyword=${keyword}`)
             dispatch(setProducts(response.data.products));
         } catch (error) {
             console.log(error);

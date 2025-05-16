@@ -26,7 +26,7 @@ const WritePage = () => {
         }
 
         try {
-            await axios.post('http://localhost:8080/api/write', {
+            await axios.post(`${process.env.REACT_APP_API_URL}/api/write`, {
                 title,
                 content
             }, {

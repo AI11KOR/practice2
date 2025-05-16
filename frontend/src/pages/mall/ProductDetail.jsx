@@ -50,7 +50,7 @@ const ProductDetail = () => {
     // }
     const handleAddCart = async () => {
         try {
-            await axios.post('http://localhost:8080/api/addToCart', {
+            await axios.post(`${process.env.REACT_APP_API_URL}/api/addToCart`, {
                 productId: product._id,
                 count: 1
             }, {

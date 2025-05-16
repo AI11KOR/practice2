@@ -16,7 +16,7 @@ const Cart = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/api/cart`, {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/cart`, {
                     
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -60,7 +60,7 @@ const Cart = () => {
         const newCount = item.count + 1;
 
         try {
-            await axios.patch('http://localhost:8080/api/cart/updateCount', {
+            await axios.patch(`${process.env.REACT_APP_API_URL}/api/cart/updateCount`, {
                 cartId: item._id,
                 count: newCount
             }, {
@@ -85,7 +85,7 @@ const Cart = () => {
         if(newCount < 1) return;
 
         try {
-            await axios.patch('http://localhost:8080/api/cart/updateCount', {
+            await axios.patch(`${process.env.REACT_APP_API_URL}/api/cart/updateCount`, {
                 cartId: item._id,
                 count: newCount
             }, {
@@ -131,7 +131,7 @@ const Cart = () => {
         const item = products[index];
 
         try {
-            await axios.delete(`http://localhost:8080/api/cart/${item._id}`, {
+            await axios.delete(`${process.env.REACT_APP_API_URL}/api/cart/${item._id}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

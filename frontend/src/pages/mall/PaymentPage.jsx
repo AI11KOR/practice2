@@ -28,7 +28,7 @@ const PaymentPage = () => {
     useEffect(() => {
         const fetchPosts = async() => {
             try {
-                const response = await axios.get('http://localhost:8080/api/payment', {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/payment`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     },
@@ -83,7 +83,7 @@ const PaymentPage = () => {
                 console.log('userInfo:', userInfo);
 
                 try {
-                    await axios.post('http://localhost:8080/api/payment/success', {
+                    await axios.post(`${process.env.REACT_APP_API_URL}/api/payment/success`, {
                         imp_uid: rsp.imp_uid,
                         merchant_uid: rsp.merchant_uid,
                         paid_amount: rsp.paid_amount, // 결제 금액

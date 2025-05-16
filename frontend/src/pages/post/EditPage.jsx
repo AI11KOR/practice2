@@ -19,7 +19,7 @@ const EditPage = () => {
         
         const axiosPosts = async () => {
             try {
-                const response = await axios.get(`http://localhost:8080/api/edit/${id}`, {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/edit/${id}`, {
 
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -54,7 +54,7 @@ const EditPage = () => {
         }
 
             try {
-                await axios.post(`http://localhost:8080/api/edit/${id}`, {
+                await axios.post(`${process.env.REACT_APP_API_URL}/api/edit/${id}`, {
                     title, content
                 }, {
                     headers: {
