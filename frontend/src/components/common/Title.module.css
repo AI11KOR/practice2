@@ -1,0 +1,31 @@
+.custom-title {
+    position: relative;
+    font-weight: bold;
+    font-size: 40px;
+    
+  
+    background: linear-gradient(
+      90deg,
+      #555 0%,
+      blueviolet 50%,
+      #555 100%
+    );
+    background-size: 200%;
+    background-position: -100% 0;
+  
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    animation: neon-glow 2s linear infinite;
+  }
+  
+  @keyframes neon-glow {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+  
+  

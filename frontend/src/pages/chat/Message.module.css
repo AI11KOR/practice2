@@ -1,0 +1,69 @@
+.message {
+    width:100%;
+    height:500px;
+    background: #b2c7d9;
+    display: flex;
+    overflow-y: auto;
+ 
+}
+
+.msgSection {
+    padding:10px;
+    width:100%;
+}
+
+.systemMsgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.systemMsg {
+    background-color: #55667758;
+    border-radius: 100px;
+    text-align: center;
+    color: white;
+    padding: 2px 15px;
+    font-size: 14px;
+}
+
+.myMsgContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+    /* flex-direction: row; */
+    align-items: center;
+    gap:5px;
+}
+
+.myMsg {
+    background-color: #f7e600;
+    border-radius: 8px;
+    padding: 8px;
+    max-width: 200px;
+    font-size: 12px;
+}
+
+.yourMsgContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:5px;
+    /* justify-content:center */
+}
+
+.profileImg {
+    width: 38px;
+    height: 38px;
+    border-radius: 100px;
+    margin-right: 10px;
+    border:1px solid black;
+}
+
+.yourMsg {
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+    max-width: 200px;
+    font-size: 12px;
+}

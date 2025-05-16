@@ -1,0 +1,25 @@
+:root {
+  --main-color: #1C61FF;
+  --font-family: 'Noto Sans KR', sans-serif;
+
+    --bg-color: #ffffff;
+    --text-color: #000000;
+}
+
+.App {
+  text-align: center;
+  width: 1400px;
+  
+  margin: 0 auto;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

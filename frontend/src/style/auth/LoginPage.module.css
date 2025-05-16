@@ -1,0 +1,54 @@
+.emailInp {
+    width:300px;
+    height:40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    font-size:16px;
+    border:1px solid #eee;
+}
+
+.passwordInp {
+    width:300px;
+    height:40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    font-size:16px;
+    margin-bottom: 50px;
+    border:1px solid #eee;
+}
+
+.loginBtn {
+    width:140px;
+    height:40px;
+    color:rgb(179, 179, 179);
+    background: var(--main-color);
+    cursor:pointer;
+    font-size:18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border:none;
+}
+
+.loginBtn:hover {
+    background: blue;
+    color:white;
+}
+
+.registerBtn {
+    width:140px;
+    height:40px;
+    color:rgb(179, 179, 179);
+    background: rgb(190, 42, 42);
+    cursor:pointer;
+    font-size:18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border:none;
+}
+
+.registerBtn:hover {
+    background: red;
+    color:white;
+}

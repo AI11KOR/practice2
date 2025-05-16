@@ -1,0 +1,13 @@
+.shop {
+    width:1000px;
+    display: flex;
+    flex-direction: column;
+    margin:0 auto;
+}
+
+.shopCard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:50px;
+    justify-content: center;
+}

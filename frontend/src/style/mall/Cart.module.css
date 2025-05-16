@@ -1,0 +1,113 @@
+.cart {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section1 {
+    width: 700px;
+    height:300px;
+    border:1px solid #eee;
+    box-shadow: 2px 2px 3px 0;
+    display:flex;
+    padding: 20px;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 30px;
+}
+
+.productImg {
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    border: 1px solid black;
+    object-fit: cover;
+}
+
+.countBtn {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    font-size:18px;
+    font-weight: bold;
+    border:1px solid black;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.minusBtn {
+    cursor:pointer;
+    font-size:18px;
+    border:none;
+    width:30px;
+    height: 30px;
+    background: none;
+    font-weight: bold;
+}
+
+.plusBtn {
+    cursor:pointer;
+    font-size:18px;
+    border:none;
+    width:30px;
+    height: 30px;
+    background: none;
+    font-weight: bold;
+}
+
+
+
+.section2 {
+    width:400px;
+    height:400px;
+    border: 1px solid #eee;
+    box-shadow: 2px 2px 3px 0;
+    padding: 30px;
+    box-sizing: border-box;
+    
+}
+
+.rightCard {
+    display:flex;
+    justify-content: space-between;
+    text-align: left;
+    align-items:center;
+    gap: 100px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    border-bottom: 3px solid black;
+}
+
+.sumPayment {
+    display: flex;
+    justify-content: flex-end;
+    margin-top:10px;
+    font-size:25px;
+    font-weight: bold;
+}
+
+
+.buttonSection {
+    margin-top:50px;
+}
+
+.button {
+    cursor:pointer;
+    border:1px solid #eee;
+    background: #1C61ff;
+    color:white;
+    width:200px;
+    height:40px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: blue;
+}
+
+.clickDecrease.disabled {
+    color: #ccc;
+    cursor:default;
+}
